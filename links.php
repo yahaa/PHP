@@ -6,7 +6,7 @@
 	<body> 
 		<?php 
 			$conn=@mysql_connect("localhost",'root','  ') or die("数据库连接失败！");; 
-			mysql_select_db("RUNOOB",$conn) or die("您要选择的数据库不存在"); 
+			mysql_select_db("RUNOOBSSS",$conn) or die("您要选择的数据库不存在"); 
 			$name=$_POST['username']; 
 			$pwdt=$_POST['password']; 
 			$pwd=md5($pwdt);
