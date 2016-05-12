@@ -27,4 +27,4 @@ CREATE TABLE users(
 
 
    INSERT INTO users(username,password,dates)
-       VALUES('FFF',md5('123321'),2014-10-10);
+       VALUES('FFF',md5('123321'),'2014-10-10');
