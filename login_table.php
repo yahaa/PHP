@@ -3,46 +3,40 @@
 	<body>
 		<?php
 		if(isset($_POST['add'])){
-			$dbhost = 'localhost:3036';
-			$dbuser = 'root';
-			$dbpass = '  ';
-			$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+			$host = 'localhost:3036';
+			$user = 'root';
+			$pass = '  ';
+			$conn = mysql_connect($host, $user, $pass);
 			if(! $conn )die('Could not connect: ' . mysql_error());
-
-			if(! get_magic_quotes_gpc() ){
-			   $runoob_title = addslashes ($_POST['user']);
-			   $runoob_author = addslashes ($_POST['key']);
-			}
-			else{
-			   $runoob_title = $_POST['user'];
-			   $runoob_author = $_POST['key'];
-			}
-
-			$sql = "INSERT INTO roo".
-			       "(user,key) ".
+			$username = $_POST['username'];
+			$password= md5($_POST['password']);
+			$date=$_POST['dates'];
+			$sql = "INSERT INTO users".
+			       "(username,password,dates) ".
 			       "VALUES ".
-			       "('$user','$key')";
-			mysql_select_db('RUNOOB');
-			$retval = mysql_query( $sql, $conn );
-			if(! $retval )die('Could not enter data: ' . mysql_error());
-			echo "Entered data successfully\n";
+			       "('$username','$password','$date')";
+
+			mysql_select_db('RUNOOBSSS');
+			$ok= mysql_query( $sql, $conn );
+			if(! $ok )die('Could not enter data: ' . mysql_error());
+			echo "注册成功，<a href=\"SQLXXX.php\">返回到登陆界面！</a>"; 
 			mysql_close($conn);
 		}
 		else{
 			?>
 			<form method="post" action="<?php $_PHP_SELF ?>">
-				<table width="600" border="0" cellspacing="1" cellpadding="2">
+				<table width="300" border="0" cellspacing="1" cellpadding="2">
 					<tr>
-						<td width="250">Tutorial Title</td>
-						<td><input name="runoob_title" type="text" id="runoob_title"></td>
+						<td width="250">用户名</td>
+						<td><input name="username" type="text" id="username"></td>
 					</tr>
 					<tr>
-						<td width="250">Tutorial Author</td>
-						<td><input name="runoob_author" type="text" id="runoob_author"></td>
+						<td width="250">密码</td>
+						<td><input name="password" type="text" id="password"></td>
 					</tr>
 					<tr>
-						<td width="250">Submission Date [ yyyy-mm-dd ]</td>
-						<td><input name="submission_date" type="text" id="submission_date"></td>
+						<td width="250">生日</td>
+						<td><input name="dates" type="text" id="dates"></td>
 					</tr>
 					<tr>
 						<td width="250"> </td>
@@ -50,7 +44,7 @@
 					</tr>
 					<tr>
 						<td width="250"> </td>
-						<td><input name="add" type="submit" id="add" value="Add Tutorial"></td>
+						<td><input name="add" type="submit" id="add" value="注册"></td>
 					</tr>
 				</table>
 			</form>

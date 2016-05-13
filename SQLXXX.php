@@ -15,7 +15,8 @@
 				<td>密  码：</td><td><input type="text" name="password"></td> 
 				</tr> 
 				<tr> 
-				<td><input type="submit" value="提交"></td><td><input type="reset" value="重置"></td> 
+				<td><input type="submit" value="登陆"></td><td><input type="reset" value="重置"></td> 
+				<td><a href="login_table.php">注册</a></td>
 				</tr> 
 			</table> 
 		</fieldset> 
