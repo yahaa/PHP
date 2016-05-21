@@ -76,10 +76,18 @@
 	print_r($bb);
 	print_r($bbb);
 	$ee=array_flip($bb);
+
 	print_r($ee);
 
 	$mul = array("red","green",42=>"blue","blue"=>array("apple",9=>"pear","banana","orange"=>array("dog","cat","iguana")) );
 	echo $mul['blue'][0]['orange'][1];
 	print_r($mul);
+
+	$vo=1;
+	$vb=2;
+	echo "quanjubianliangshuzu";
+	print_r($GLOBALS);
+	echo "$_server";
+	print_r($_SERVER);
 ?>
 </pre>

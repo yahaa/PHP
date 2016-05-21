@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<form method="post" action="paoo.php">
-			name:<input type="text" name="fname">
+		<form method="get" action="inout.php">
+			name:<input type="text" name="name">
 			date:<input type="text" name="date">
 			<input type="submit">
 		</form>
-		/*<?php
-			$sum=$_POST['fname']+$_POST['date'];
-			echo $sum;
-			echo "aklsjdklfjlkdjf";
-			echo __LINE__;
-			echo "<br>";
-			echo __FILE__;
-			echo __DIR__;
-			echo __NEMESPCE__;
-
-		?>*/
+		<?php
+			echo date("Y/M/d");
+		?>
 	</body>
 </html>
