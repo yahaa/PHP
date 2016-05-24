@@ -1,5 +1,3 @@
 <?php
-	echo $_GET['name'];
-	echo "<br>";
-	echo $_GET['date'];
+	echo md5("131452");
 ?>
